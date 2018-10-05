@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<title>not sure</title>
+	</head>
+	<style>
+		html {
+			font-size: 62.5%;
+		}
+		body {
+			font-family: monospace;
+			background: beige;
+		}
+		header {
+			font-weight: bold;
+			font-style: italic;
+			font-size: 5rem;
+			color: black;
+			position: fixed;
+			top: 20px;
+			left: 20px;
+		}
+		main {
+			font-size: 10rem;
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			tranform: translate(-50%, -50%);
+		}
+	</style>
+	<body>
+		<header>i'm not sure about this ...</header>
+		<main>💲<main>
+		<script>
+			const main = document.querySelector('main')
+			setInterval(() => {
+				if (main.innerText === '💲') {
+					main.innerText = '🧐‍'
+				} else {
+					main.innerText = '💲'
+				}
+
+			}, 1000)
+		</script>
+	</body>
+</html>
