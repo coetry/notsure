@@ -1,6 +1,10 @@
+<!DOCTYPE html>
+<!-- not sure bout this one -->
 <html>
 	<head>
 		<title>not sure</title>
+		<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	</head>
 	<style>
 		html {
@@ -8,38 +12,68 @@
 		}
 		body {
 			font-family: monospace;
-			background: beige;
+			background: linen;
+      overflow: hidden;
 		}
 		header {
 			font-weight: bold;
 			font-style: italic;
 			font-size: 5rem;
-			color: black;
+			color: linen;
+      background-color: dimgray;
 			position: fixed;
 			top: 20px;
 			left: 20px;
 		}
+    section {
+      font-size: 4rem;
+      width: 100vw;
+      margin-left: 15px;
+    }
 		main {
 			font-size: 10rem;
 			position: fixed;
 			top: 50%;
 			left: 50%;
+      z-index: 10;
 			tranform: translate(-50%, -50%);
 		}
+    @media(max-width: 600px) {
+      header {
+        font-size: 2rem;
+      }
+      section {
+        font-size: 2rem;
+      }
+      main {
+        font-size: 6rem;
+      }
+    }
 	</style>
 	<body>
 		<header>i'm not sure about this ...</header>
-		<main>💲<main>
+    <section></section>
+		<main>💲</main>
 		<script>
 			const main = document.querySelector('main')
-			setInterval(() => {
+      const section = document.querySelector('section')
+		  let dollaSigns = '💲'	
+ 
+      setInterval(() => {
 				if (main.innerText === '💲') {
-					main.innerText = '🧐‍'
+					main.innerText = '🧐'
 				} else {
 					main.innerText = '💲'
 				}
-
+        main.style.top = `${Math.floor(Math.random() * window.innerHeight + 1)}px`
+        main.style.left = `${Math.floor(Math.random() * window.innerWidth + 1)}px`
 			}, 1000)
+      
+      for (let i = 0; i < 300; i++) {
+        dollaSigns += ' 💲'
+      }
+      
+      section.innerText = dollaSigns
 		</script>
 	</body>
 </html>
